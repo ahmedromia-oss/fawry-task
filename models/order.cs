@@ -40,16 +40,13 @@ public class Order
         Console.WriteLine($"Total Paid: ${total}");
         Console.WriteLine($"Remaining Balance: ${customer.Balance}");
 
-        // Ship items
-
-
-        // Update product stock
+       
         foreach (var item in customer.cart.Items)
         {
             item.Product.Quantity -= item.Quantity;
         }
 
-        // Empty cart after checkout
+       
         customer.cart = new Cart();
     }
 }
